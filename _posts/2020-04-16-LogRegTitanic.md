@@ -258,7 +258,7 @@ What if our model requires more than one parameter? If optimising for 2 paramete
 
 So we need another solution beyond visual identification. To this end we use gradient descent. Gradient descent is an optimisation algorithm that takes iterative steps from a defined starting point towards a set of values that minimise a function. For our use case gradient descent takes a set of initial model parameters and returns an updated set that result in a lower value for our cost function. It works by calculating how the cost function changes for changes in our parameters.
 
-Andrew Ng defines gradient descent for use in fitting paramters with the below formula. Given a cost function we want to simultaneously update the values of the parameters by a learning rate (a) * the partial derivative of the cost function with respect to the parameter being updated (that's the ulgly looking thing on the right of a). Mathematicians have deduced proofs for the partial derivatives that are beyond me and the scope of this post. However this doesn't prevent us from understanding how they are used in gradient descent.
+Andrew Ng defines gradient descent for use in fitting parameters with the below formula. Given a cost function we want to simultaneously update the values of the parameters by a learning rate (a) * the partial derivative of the cost function with respect to the parameter being updated (that's the ulgly looking thing on the right of a). Mathematicians have deduced proofs for the partial derivatives that are beyond me and the scope of this post. However this doesn't prevent us from understanding how they are used in gradient descent.
 
 ![title](/images/grad_update_rule.png)
 
