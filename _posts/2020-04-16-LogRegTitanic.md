@@ -82,7 +82,7 @@ plt.show()
 ```
 
 
-![png](images/simoid_fig.png)
+![png](/images/simoid_fig.png)
 
 
 Passing the output of Z through the Sigmoid function gives us our prediction. Taken together our model form is the below two statements.
@@ -122,7 +122,7 @@ If we were accessing multiple models with the same form but different parameters
 
 The cost function used to evaluate logistical regression is defined by Andrew Ng below. I am going to explore how it works with hypothetical data.
 
-![title](cost_function_log_reg.png)
+![title](/images/cost_function_ng.png)
 
 
 
@@ -183,7 +183,7 @@ plt.show()
 ```
 
 
-![png](log_reg_titanic_dataset_files/log_reg_titanic_dataset_11_0.png)
+![png](/images/penalty_fig.png)
 
 
 We have two plots as the penalty applied references the actual value of the target. We can see that the cost of our prediction is close to zero when our model is very certain and correct, ie predicting 0.999 when the target is equal to 1. 
@@ -249,7 +249,7 @@ plt.show()
 ```
 
 
-![png](log_reg_titanic_dataset_files/log_reg_titanic_dataset_15_0.png)
+![png](/images/cost_curve_fig.png)
 
 
 Above is the cost function as a function of our single parameter b. Notice the convex relationship. In this simplified example we can see the value for our single parameter b that minimises the cost function, approximately 0.006. 
@@ -305,7 +305,7 @@ plt.show()
 
 
 
-![png](log_reg_titanic_dataset_files/log_reg_titanic_dataset_17_1.png)
+![png](/images/cost_curve_tangent_1_fig.png)
 
 
 Now if we were to plot another tangential line that just touches the point on the cost curve where the cost is at it's lowest the slope would be approximately 0 and the corresponding value of b would be the optimal value.
@@ -346,7 +346,7 @@ plt.show()
 
 
 
-![png](log_reg_titanic_dataset_files/log_reg_titanic_dataset_19_1.png)
+![png](/images/cost_curve_tangent_2_fig.png)
 
 
 Given the partial derivative approaches 0 as the parameter value approachs its optimal value the steps taken by gradient descent get smaller & smaller the closer we get to the optimal value.
@@ -423,7 +423,7 @@ plt.show()
 
 
 
-![png](log_reg_titanic_dataset_files/log_reg_titanic_dataset_21_1.png)
+![png](/images/learning_curve.png)
 
 
 Finally let's have a look at how this model compares to an implemention with Sklearn. The results are roughly the same, if run gradient descent 100,000 times the alignment is 100% but thats overkill so I'm to give myself a pass.
