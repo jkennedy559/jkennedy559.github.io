@@ -104,7 +104,7 @@ def predict(features, parameters):
     return predictions
 ```
 
-### Model Fit###
+### Model Fit ###
 
 Given our model form, how do we come up with parameters such that the predictions are sensible?
 
@@ -122,7 +122,7 @@ If we were accessing multiple models with the same form but different parameters
 
 The cost function used to evaluate logistical regression is defined by Andrew Ng below. I am going to explore how it works with hypothetical data.
 
-![title](/images/cost_function_ng.png)
+![title](/images/cost_function_log_reg.png)
 
 
 
@@ -260,7 +260,7 @@ So we need another solution beyond visual identification. To this end we use gra
 
 Andrew Ng defines gradient descent for use in fitting paramters with the below formula. Given a cost function we want to simultaneously update the values of the parameters by a learning rate (a) * the partial derivative of the cost function with respect to the parameter being updated (that's the ulgly looking thing on the right of a). Mathematicians have deduced proofs for the partial derivatives that are beyond me and the scope of this post. However this doesn't prevent us from understanding how they are used in gradient descent.
 
-![title](grad_update_rule.png)
+![title](/images/grad_update_rule.png)
 
 The partial derivative of a cost function with multiple parameters with respect to parameter b is the rate of change in the cost function given a change in parameter b, holding all other parameters constant.
 
