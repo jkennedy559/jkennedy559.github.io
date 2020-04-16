@@ -1,4 +1,4 @@
 # About
 
-Blogging about my learning journey for data science.
+Blogging about my learning journey in data science.
 
