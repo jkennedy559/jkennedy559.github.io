@@ -82,7 +82,7 @@ plt.show()
 ```
 
 
-![png](log_reg_titanic_dataset_files/log_reg_titanic_dataset_5_0.png)
+![png](images/simoid_fig.png)
 
 
 Passing the output of Z through the Sigmoid function gives us our prediction. Taken together our model form is the below two statements.
