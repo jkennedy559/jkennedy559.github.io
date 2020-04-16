@@ -426,7 +426,7 @@ plt.show()
 ![png](/images/learning_curve.png)
 
 
-Finally let's have a look at how this model compares to an implemention with Sklearn. The results are roughly the same, if run gradient descent 100,000 times the alignment is 100% but thats overkill so I'm to give myself a pass.
+Finally let's have a look at how the model compares to an implemention with Sklearn. The results are roughly the same, if you run gradient descent 100,000 times the alignment is 100% but that's overkill so I'm giving myself a pass.
 
 
 ```python
