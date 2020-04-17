@@ -7,7 +7,6 @@ This post is a learning resource to compliment Coursera's Machine Learning cours
 1. TOC
 {:toc}
 
-#hide
 ```python
 import numpy as np
 import pandas as pd
