@@ -1,7 +1,5 @@
 ## Logistic Regression - Survival onboard the RMS Titanic
 
-James Kennedy 16.04.2020
-
 This post is a learning resource to compliment Coursera's Machine Learning course which I recently completed. The goal is to manually fit a logistic regression to get my head around the inner workings. I'm going to use the Titanic dataset from Kaggle to make predictions about which passengers survived the shipwreck.
 
 1. TOC
