@@ -189,7 +189,7 @@ We have two plots as the penalty applied references the actual value of the targ
 
 The cost grows exponentially when the model predicts with high certainity incorrectly, ie predicting 0.999 when the target is 0. We can also see that the penality is small when the model is pretty sure and correct, ie predicting 0.8 when the target is equal to 1. This all sounds sensible. 
 
-The cost function's inner mechanics directly match up with our intuitive ideas about how it ought to work. It iteratively applies a penalty to each model prediction that grows exponentially the further off from reality the prediction is. The cost of the model given a set of parameters is the average cost of it's predictions. Hopefully we can now appreciate that the ostensibly scarey formula above is really just a concise expression for intuitve process. 
+The cost function's inner mechanics directly match up with our intuitive ideas about how it ought to work. It iteratively applies a penalty to each model prediction that grows exponentially the further off from reality the prediction is. The cost of the model given a set of parameters is the average cost of it's predictions. Hopefully we can now appreciate that the ostensibly scarey formula above is really just a concise expression for an intuitive process. 
 
 Below is a vectorised implementation of the cost function. Let's calculate the cost of model for the Titanic dataset with parameters initialised at zero. Given the parameter values are all zero the models prediction will be 0.5 for all observations and therefore the cost will be equal to 0.693.
 
