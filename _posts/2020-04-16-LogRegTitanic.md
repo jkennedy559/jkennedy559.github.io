@@ -361,9 +361,9 @@ I hope this explanation gives you an understanding of how gradient descent works
 
 ### Prediction ###
 
-I'm going to put all this together and fit the parameters for our survival model using the logic discussed. The model accuracy comes out at about 78%. Given 62% of passengers in the training set didn't survive we have improved upon a blanket death sentence for everyone by 16%. 
+I'm going to put all this together and fit the parameters for our survival model using the logic discussed. The model accuracy comes out at about 78%. Given 62% of passengers in the training set didn't survive we have improved upon a blanket death sentence to everyone by 16%. 
 
-I skimed over preprocessing and did no feature engineering or regularisation so this model is unlikely to do well on the test set. I will follow this up with another post documenting on how I got on trying to improve performance.
+I will follow this up with another post documenting on how I got on trying to improve performance.
 
 ```python
 # Update parameters with a learning rate and set of partial derivatives 
