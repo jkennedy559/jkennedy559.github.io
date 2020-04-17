@@ -1,6 +1,12 @@
-## Logistic Regression - Survival onboard the RMS Titanic
+---
+layout: post
+title:  "Logistic Regression - Survival onboard the RMS Titanic"
+date:   2019-04-16 21:03:36 +0530
+---
 
-This post is a learning resource to compliment Coursera's Machine Learning course which I recently completed. The goal is to manually fit a logistic regression to get my head around the inner workings. I'm going to use the Titanic dataset from Kaggle to make predictions about which passengers survived the shipwreck.
+
+
+This post is a learning resource to compliment Coursera's Machine Learning course which I recently completed. I'm going to manually fit a logistic regression to get my head around the inner workings. I'm going to use the Titanic dataset from Kaggle to make predictions about which passengers survived the shipwreck.
 
 1. TOC
 {:toc}
@@ -53,11 +59,11 @@ print(f'Model Survival as a function of {", ".join(feature_names)+"."}')
 
 ### Model Form ###
 
-Logistic regression is a classification algorithm that predicts the probablity that an observation belongs to a class. For our purposes we will use information about each passinger, their age, sex, etc, to estimate the probability that they survivied the long night at sea in 1912. 
+Logistic regression is a classification algorithm that predicts the probability that an observation belongs to a class. For our purposes we will use information about each passenger, their age, sex, etc, to estimate the probability that they survived the long night.
 
 In machine learning logistic regression is categorised as one of the linear models, along with linear regression - no points awarded for that one. My understanding is that the important class attribute of being a linear model is the model features being added together to constitute the output, as opposed to using multiplication or exponents. 
 
-Displaying our model form with logistic regression is a two part process. Function Z below is a linear combination of the product of our paramaters (B0, B1, ..., Bn) & features from the Titanic dataset. I know I *just said* that the class quality of linear models precludes multiplication in the model form but the heavenly father has confirmed to me that this doesn't constitute a breach.
+Displaying our model form with logistic regression is a two part process. Function Z below is a linear combination of the product of our parameters (B0, B1, ..., Bn) & features from the Titanic dataset. I know I *just said* that the class quality of linear models precludes multiplication in the model form but the heavenly father has confirmed to me that this doesn't constitute a breach.
 
 *Z = B0xBiasTerm + B1xPclass + B2xAge + B3xSex_female + B4xSex_male + B5xEmbarked_C + B6xEmbarked_Q + B7xEmbarked_S*
 
@@ -88,7 +94,7 @@ Passing the output of Z through the Sigmoid function gives us our prediction. Ta
 
 *Prediction = Sigmoid(Z)*
 
-The final piece of the puzzle is a threshold above which we actually predict survival. 50% is an intuitive threshold so if we predict >= 50% we will have offically granted a second chance, else they're a goner.
+The final piece of the puzzle is a threshold above which we actually predict survival. 50% is an intuitive threshold so if we predict >= 50% we will have officially granted a second chance, else they're a goner.
 
 *Predict Survival if Sigmoid(Z) >= 0.5 else Deceased*
 
@@ -113,7 +119,7 @@ Our model is going to make predictions using its parameters. Given this a superv
 
 Cost as a general metric invokes loss, error, miscalculation so however its tallied up we want it minimised. Prior to the mathematics let's think generally about how the cost function might work given our predicament. 
 
-We know whether each individual in our dataset survived the shipwreck and we are building a model that is going to predict for each individual the likeihood of survival. Accesing each individual iteratively we can tally a penalty for each prediction that is low when the model is on the right track and high when it's barking up the wrong tree. Our model makes predictions between 0 & 1 but, given the sigmoid transformation, it never actually predicts with 100% certainty. So when our model predicts with a high degree of certainty, >80%, that an individual survived when they in fact did we don't want it to be penalised very much. Equally if the model predicts with high certainty that an individual survived when they were in fact at the bottum of the sea we want a substantial penalty applied.
+We know whether each individual in our dataset survived the shipwreck and we are building a model that is going to predict for each individual the likelihood of survival. Accessing each individual iteratively we can tally a penalty for each prediction that is low when the model is on the right track and high when it's barking up the wrong tree. Our model makes predictions between 0 & 1 but, given the sigmoid transformation, it never actually predicts with 100% certainty. So when our model predicts with a high degree of certainty, >80%, that an individual survived when they in fact did we don't want it to be penalised very much. Equally if the model predicts with high certainty that an individual survived when they were in fact at the bottum of the sea we want a substantial penalty applied.
 
 If we were accessing multiple models with the same form but different parameters it would be sensible to favour the model with the lowest average cost tallied in such a manner. Hopefully this seems intuitive.
 
@@ -155,7 +161,7 @@ print(f'The total cost for the model used to generate our predictions is {cost} 
 
 The above output displays the results of applying the cost function to each dummy observation in turn. The first observation to note is that the penalty has two components for each observation. One component is calculated with reference to the target being 1 and the other for the target being 0. This is purely a neat way to represent that in each case the penalty refers to the actual value of the target. So intuitively the penalty component for y=1 is only non-zero when y=1 and vice versa for y=0.
 
-From the output we can see that the penalty is small for observations 0 & 1 because the prediction was close to reality. Equally we had a comparatively large penalty for observations 3 & 4 because the predictions were way off. The model was uncertain about observation 2 assiging it a 50% probabilty of being 1. 
+From the output we can see that the penalty is small for observations 0 & 1 because the prediction was close to reality. Equally we had a comparatively large penalty for observations 3 & 4 because the predictions were way off. The model was uncertain about observation 2 assigning it a 50% probability of being 1.
 
 In order to appreciate how the penalty changes with changes in the prediction we can plot the penalty as a function of the prediction.
 
@@ -185,9 +191,9 @@ plt.show()
 
 We have two plots as the penalty applied references the actual value of the target. We can see that the cost of our prediction is close to zero when our model is very certain and correct, ie predicting 0.999 when the target is equal to 1. 
 
-The cost grows exponentially when the model predicts with high certainity incorrectly, ie predicting 0.999 when the target is 0. We can also see that the penality is small when the model is pretty sure and correct, ie predicting 0.8 when the target is equal to 1. This all sounds sensible. 
+The cost grows exponentially when the model predicts with high certainty incorrectly, ie predicting 0.999 when the target is 0. We can also see that the penalty is small when the model is pretty sure and correct, ie predicting 0.8 when the target is equal to 1. This all sounds sensible.
 
-The cost function's inner mechanics directly match up with our intuitive ideas about how it ought to work. It iteratively applies a penalty to each model prediction that grows exponentially the further off from reality the prediction is. The cost of the model given a set of parameters is the average cost of it's predictions. Hopefully we can now appreciate that the ostensibly scarey formula above is really just a concise expression for an intuitive process. 
+The cost function's inner mechanics directly match up with our intuitive ideas about how it ought to work. It iteratively applies a penalty to each model prediction that grows exponentially the further off from reality the prediction is. The cost of the model given a set of parameters is the average cost of it's predictions. Hopefully we can now appreciate that the ostensibly scary formula above is really just a concise expression for an intuitive process.
 
 Below is a vectorised implementation of the cost function. Let's calculate the cost of model for the Titanic dataset with parameters initialised at zero. Given the parameter values are all zero the models prediction will be 0.5 for all observations and therefore the cost will be equal to 0.693.
 
@@ -346,12 +352,12 @@ plt.show()
 ![png](/images/cost_curve_tangent_2_fig.png)
 
 
-Given the partial derivative approaches 0 as the parameter value approachs its optimal value the steps taken by gradient descent get smaller & smaller the closer we get to the optimal value.
+Given the partial derivative approaches 0 as the parameter value approaches its optimal value the steps taken by gradient descent get smaller & smaller the closer we get to the optimal value.
 
 In the definition above it referenced that gradient descent takes iterative steps from a defined starting point. How do we know if our starting value is greater or less than the optimal value? In our simplified example the starting point doesn't matter. 
 
-* If our initial value is less than the optimal value the slope is negative so we will add to the paramater value thereby descending down the cost curve.
-* If our initial value is greater than the optimal value the slope is positive so we will subtract from the paramater value and again descend down the cost curve.
+* If our initial value is less than the optimal value the slope is negative so we will add to the parameter value thereby descending down the cost curve.
+* If our initial value is greater than the optimal value the slope is positive so we will subtract from the parameter value and again descend down the cost curve.
 
 So the partial derivative will dictate whether we adjust our parameter value up or down and the learning rate dictates the size of the step we take. If we set the learning rate too high we may step over the optimum value of our parameter. If the learning rate is too small we may not take large enough steps to reach the optimum value at all. Printing out the cost for each iterative step will give you an idea of whether you have an appropriate learning rate.
 
@@ -424,7 +430,7 @@ plt.show()
 ![png](/images/learning_curve.png)
 
 
-Finally let's have a look at how the model compares to an implemention with Sklearn. The results are roughly the same, if you run gradient descent 100,000 times the alignment is 100% but that's overkill so I'm giving myself a pass.
+Finally let's have a look at how the model compares to an implementation with Sklearn. The results are roughly the same, if you run gradient descent 100,000 times the alignment is 100% but that's overkill so I'm giving myself a pass.
 
 
 ```python

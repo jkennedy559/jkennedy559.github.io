@@ -1,43 +1,53 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-
 title: James Kennedy's Blog
-description: 
-github_username: jkennedy559
-
-# Email and twitter are optional:
+author: jkennedy559
 email: jkennedy559@gmail.com
-twitter_username:
+description: > # this means to ignore newlines until "show_exerpts:"
+  Blogging about things I have learnt and private projects.
+show_excerpts: true # set to true to show excerpts on the homepage
 
-# Set this to true to get LaTeX math equation support
-use_math:
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+sass:
+  sass_dir: _sass
+plainwhite:
+  name: James Kennedy
+  tagline: Aspiring Data Scientist
+  date_format: "%b %-d, %Y"
+  sitemap: true # set to true to generate sitemap.xml content
 
-# Add your Google Analytics ID here if you have one and want to use it
-google_analytics:
+  # generate social links in footer
+  social_links:
+    linkedIn: in/james-kennedy-369aa7109/
+    github:  jkennedy559
+    rss: rss
+    # dribbble: jekyll
+    # facebook: jekyll
+    # flickr:   jekyll
+    # instagram: jekyll
+    # pinterest: jekyll
+    # youtube: jekyll
+    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+    # youtube_channel_name: CloudCannon
+    # telegram: jekyll
+    # googleplus: +jekyll
+    # microdotblog: jekyll
+    # twitter: thelehhman
 
-# Everything below here can be ignored, unless you want to change the theme entirely
-theme: minima
+    # Mastodon instances
+    # mastodon:
+    # - username: jekyll
+    #   instance: example.com
+    # - username: jekyll2
+    #   instance: example.com
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
+
+# Build settings
+theme: plainwhite
+
 plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-octicons
-  - jekyll-github-metadata
-
-titles_from_headings:
-  enabled:     true
-  strip_title: true
-  collections: true
-
-highlighter: rouge
-markdown: kramdown
-kramdown:
-  math_engine: katex
-  input: GFM
-  auto_ids: true
-  hard_wrap: false
-  syntax_highlighter: rouge
+  - jekyll-seo-tag
+#  - jekyll-feed

@@ -1,1 +1,3 @@
-Hello and welcome to my blog.
+---
+layout: home
+---
