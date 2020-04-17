@@ -7,9 +7,8 @@ This post is a learning resource to compliment Coursera's Machine Learning cours
 1. TOC
 {:toc}
 
-
-```python
 #hide
+```python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
