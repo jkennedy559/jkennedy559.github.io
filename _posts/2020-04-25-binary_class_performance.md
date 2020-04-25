@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Model Performance - Binary Classification"
-date:   2019-04-25 21:03:36 +0530
+date:   2020-04-25 21:03:36 +0530
 ---
 
 After my original post on logistic regression I thought I could quickly cover model optimisation. This was very short sighted as there is too much to cover so I'm pivoting away from that idea. Instead I will post a series of notes covering concepts along the way to *hopefully* improving model performance on the Kaggle Titanic dataset. This post is going to cover accessing performance with a binary classifier.
