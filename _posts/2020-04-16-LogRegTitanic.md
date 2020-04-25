@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Logistic Regression - Survival onboard the RMS Titanic"
-date:   2019-04-16 21:03:36 +0530
+date:   2020-04-16 21:03:36 +0530
 ---
 
 
