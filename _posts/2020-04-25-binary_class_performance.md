@@ -90,12 +90,12 @@ To answer this question I need more granularity about the models predictions.
 ```python
 # For both class instances, how many did we correctly & incorrectly classify
 true_positives = sum((binary_predictions == 1) & (target_train == 1))
-false_negatives = sum((binary_predictions == 0) & (target_train == 0))
+true_negatives = sum((binary_predictions == 0) & (target_train == 0))
 false_positives = sum((binary_predictions == 1) & (target_train != 1))
-true_negatives = sum((binary_predictions == 0) & (target_train != 0))
+false_negatives = sum((binary_predictions == 0) & (target_train != 0))
 
 # Plot confusion matrix
-confusion = np.array([(true_positives, true_negatives), (false_positives, false_negatives)])
+confusion = np.array([(true_positives, false_negatives), (false_positives, true_negatives)])
 fig, ax = plt.subplots()
 ax = sb.heatmap(confusion, annot=True, fmt="d", cbar=False,
                xticklabels=['Predicted Survival', 'Predicted Deceased'],
@@ -164,12 +164,12 @@ def guage_performance(features, parameters, test, threshold=0.5):
     
     # Breakdown of predictions
     true_positive = sum((binary_predictions == 1) & (test == 1))
-    false_negative = sum((binary_predictions == 0) & (test == 0))
+    true_negative = sum((binary_predictions == 0) & (test == 0))
     false_positive = sum((binary_predictions == 1) & (test != 1))
-    true_negative = sum((binary_predictions == 0) & (test != 0))
+    false_negative = sum((binary_predictions == 0) & (test != 0))
 
     # Compute performance metrics
-    recall = true_positive/(true_positive + true_negative)
+    recall = true_positive/(true_positive + false_negative)
     precision = true_positive/(true_positive + false_positive)
     F_score = 2 * (precision * recall)/(precision + recall)
     
