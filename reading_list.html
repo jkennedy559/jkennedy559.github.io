@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{% for item in site.data.books_list.toc %}
+    <h3>{{ item.title }}</h3>
+      <ul>
+        {% for book in item.yearbooks %}
+          <li>{{ book.name }}</li>
+        {% endfor %}
+      </ul>
+{% endfor %}
+
+  <!-- <p class="feed-subscribe"><svg class="svg-icon orange">
+		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
