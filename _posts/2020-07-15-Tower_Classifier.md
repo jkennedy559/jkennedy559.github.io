@@ -4,7 +4,6 @@ title:  "Tower Classifier'"
 date:   2020-07-15 21:03:36 +0530
 ---
 
-# Tower Classifier
 
 Like everyone else I have had six months of Covid imposed solitude but unlike others I've been extremely unemployed.
 
