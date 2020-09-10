@@ -4,7 +4,6 @@ title:  "Tower Classifier'"
 date:   2020-07-15 21:03:36 +0530
 ---
 
-
 Like everyone else I have had six months of Covid imposed solitude but unlike others I've been extremely unemployed.
 
 I've been through multiple fads - sour dough, circuits, The Sopranos, etc. Over the last few weeks I've occupied myself with producing a simple web application that classifies pictures of either the [CN Tower](https://en.wikipedia.org/wiki/CN_Tower), [Skytree](https://en.wikipedia.org/wiki/Tokyo_Skytree) or [The Space Needle](https://en.wikipedia.org/wiki/Space_Needle).
