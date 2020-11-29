@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tower Classifier'"
+title:  "Tower Classifier"
 date:   2020-07-15 21:03:36 +0530
 ---
 

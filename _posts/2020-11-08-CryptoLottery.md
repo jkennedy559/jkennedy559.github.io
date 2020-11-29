@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CryptoLottery'"
+title:  "CryptoLottery"
 date:   2020-11-08 21:03:36 +0530
 ---
 

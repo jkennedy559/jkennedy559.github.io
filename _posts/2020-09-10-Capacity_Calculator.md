@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Covid Capacity Calculator'"
+title:  "Covid Capacity Calculator"
 date:   2020-09-09 21:03:36 +0530
 ---
 
