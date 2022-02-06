@@ -51,7 +51,7 @@ plainwhite:
 # - reading_list.md
 
 # Build settings
-theme: plainwhite
+theme: jekyll-theme-minimal
 
 plugins:
   - jekyll-seo-tag
